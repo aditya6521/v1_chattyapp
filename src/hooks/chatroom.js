@@ -3,6 +3,7 @@ import firebase from "firebase/app";
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { ChatMessage } from "./chatmessage";
 import { auth, firestore } from "../firebase/firebase_config";
+import send from "./send.svg";
 
 
 
@@ -43,9 +44,9 @@ function ChatRoom() {
   
       <form onSubmit={sendMessage}>
   
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type" />
   
-        <button type="submit" disabled={!formValue}>🕊️</button>
+        <button type="submit" disabled={!formValue}><img src={send}/></button>
   
       </form>
     </>)
